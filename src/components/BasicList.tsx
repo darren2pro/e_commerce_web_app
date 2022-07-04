@@ -51,9 +51,9 @@ const BasicList = () => {
             <tr key={product.id}>
                 <td>{product.item}</td>
                 <td>{product.series}</td>
-                <td>{product.price}</td>
-                <a className='btn btn-primary' href={`/products/${product.id}`}>Details</a>
-                <Button className='btn btn-primary' onClick={() => handleAddToCart(product)}>Add to cart</Button>
+                <td>${product.price}</td>
+                <td><a className='btn btn-primary' href={`/products/${product.id}`}>Details</a></td>
+                <td><Button className='btn btn-primary' onClick={() => handleAddToCart(product)}>Add to cart</Button></td>
             </tr>
         );
     });
@@ -76,7 +76,7 @@ const BasicList = () => {
         <div>
             <Card className='card align-items-center'>
                 <CardHeader className='d-flex'>
-                    <h4 className='card-title mb-0 flex-grow-1'>All Products</h4>
+                    <h3 className='card-title mb-0 flex-grow-1'>All Products</h3>
                 </CardHeader>
                 <CardBody className='p-0'>
                     {table}

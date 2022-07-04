@@ -27,6 +27,7 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "reactstrap": "^9.1.1",
+    "sass": "^1.53.0",
     "typescript": "^4.5.4",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.2"
@@ -41,14 +42,7 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
     "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix",
     "format": "prettier --check \"src/**/*.{js,ts,jsx,tsx,scss}\"",
-    "format:fix": "prettier --write \"src/**/*.{js,ts,jsx,tsx,scss}\"",
-    "_comment": [
-      "I use Parcel to compile my code before sending it to the browser, instead of using WebPack because Parcel requires less configuation",
-      "I add the 'parcel-start' script to start the app with parcel, which automatically installs",
-      "the associated dependencies and builds the app.",
-      "For 'parcel-build' I add the --experimental-scope-hoisting flag to tree-shake (ask the software to inspect our",
-      "use of the code and only include the functions that we're actually using in production — a process known as 'Tree Shaking'.)"
-    ]
+    "format:fix": "prettier --write \"src/**/*.{js,ts,jsx,tsx,scss}\""
   },
   "browserslist": {
     "production": [

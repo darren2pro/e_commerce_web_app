@@ -10,24 +10,23 @@ export type ProductDetailsPageProps = {
 };
 
 const ProductDetailsPage = (props: ProductDetailsPageProps) => {
-    const table = (
-        <Table responsive className='table-striped table-sm'>
-            <thead>
-
-            </thead>
-        </Table>
+    const info = (
+        <div>
+            <h4>From series: {props.series}</h4>
+            <h4>Price: ${props.price}</h4>
+            <h4>Description: {props.description}</h4>
+        </div>
     );
     return (
-        <div className={'product-details-page'}>
+        <div>
             <Card className='card'>
                 <CardHeader className='align-items-center d-flex'>
-                    <h4 className='card-title mb-0 flex-grow-1'>{props.item}</h4>
+                    <h3 className='card-title mb-0 flex-grow-1'>{props.item} Details Page</h3>
                 </CardHeader>
                 <CardBody className='p-0'>
-                    {table}
+                    {info}
                 </CardBody>
             </Card>
-
         </div>
     );
 };
