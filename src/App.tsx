@@ -1,23 +1,15 @@
 import Home from './pages/Home';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@material-ui/core';
-import { blue, orange } from '@material-ui/core/colors';
-import { PRODUCT_ITEMS } from './components/BasicList';
+import { PRODUCT_ITEMS } from './components/AllProducts';
 import ProductDetailsPage, {
-    ProductDetailsPageProps,
-} from './components/ProductDetailsPage';
-
-const theme = createTheme({
-    palette: {
-        primary: blue,
-        secondary: orange,
-    },
-});
+    FullProductInformation,
+} from './pages/ProductDetailsPage';
+import Cart from './pages/Cart';
 
 const App = () => {
     const productRoutes = PRODUCT_ITEMS.map(
-        (product: ProductDetailsPageProps, index: number) => {
+        (product: FullProductInformation, index: number) => {
             const ele = (
                 <ProductDetailsPage
                     item={product.item}
@@ -38,14 +30,13 @@ const App = () => {
     );
     return (
         <div className="App">
-            <ThemeProvider theme={theme}>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        {productRoutes}
-                    </Routes>
-                </BrowserRouter>
-            </ThemeProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    {productRoutes}
+                    <Route path="/cart" element={<Cart />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 };

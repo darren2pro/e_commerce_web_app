@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, Table } from 'reactstrap';
 
-export type ProductDetailsPageProps = {
+export type FullProductInformation = {
     item: string;
     id: string;
     series: string;
@@ -9,7 +9,7 @@ export type ProductDetailsPageProps = {
     description: string;
 };
 
-const ProductDetailsPage = (props: ProductDetailsPageProps) => {
+const ProductDetailsPage = (props: FullProductInformation) => {
     const info = (
         <div>
             <h4>From series: {props.series}</h4>

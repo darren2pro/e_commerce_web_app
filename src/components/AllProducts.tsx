@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Card, CardBody, CardHeader, Table } from 'reactstrap';
-import { ProductDetailsPageProps } from './ProductDetailsPage';
+import { FullProductInformation } from '../pages/ProductDetailsPage';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { addProductToCart } from '../redux/cart-products-slice';
 
 export const PRODUCT_ITEMS = [
     {
@@ -42,14 +44,20 @@ export const PRODUCT_ITEMS = [
     },
 ];
 
-const BasicList = () => {
-    function handleAddToCart(item: ProductDetailsPageProps) {
+const AllProducts = () => {
+    const cartProducts = useAppSelector(
+        (state) => state.productsInCart.products
+    );
+    const dispatch = useAppDispatch();
+
+    function handleAddToCart(item: FullProductInformation) {
         // TODO: Implement this
         console.log(`Adding ${item.item} to cart`);
+        dispatch(addProductToCart(item));
     }
 
     const productDataRows = PRODUCT_ITEMS.map(
-        (product: ProductDetailsPageProps, index) => {
+        (product: FullProductInformation, index) => {
             return (
                 <tr key={product.id}>
                     <td>{product.item}</td>
@@ -104,4 +112,4 @@ const BasicList = () => {
     );
 };
 
-export default BasicList;
+export default AllProducts;

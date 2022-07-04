@@ -1,4 +1,4 @@
-import BasicList from '../components/BasicList';
+import AllProducts from '../components/AllProducts';
 import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import { Button } from '@material-ui/core';
@@ -21,9 +21,16 @@ const Home: React.FC = () => {
                         .start();
                 }}
             />
-            <BasicList />
+            <AllProducts />
             <br />
-            <br />
+            <Button
+                variant="contained"
+                color="primary"
+                component={Link}
+                to="/cart"
+            >
+                View Cart
+            </Button>
         </>
     );
 };
