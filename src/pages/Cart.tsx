@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { FullProductInformation } from './ProductDetailsPage';
 import {
     Button as BootstrapButton,
@@ -13,16 +13,18 @@ import {
 } from 'reactstrap';
 
 import { Button } from '@material-ui/core';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { removeProductFromCart } from '../redux/cart-products-slice';
+import CheckoutForm from '../components/CheckoutForm';
 
 const Cart = () => {
+    const dispatch = useAppDispatch();
     const [updateCartList, setUpdateCartList] = React.useState(false);
     const productsInCart = useAppSelector(
         (state) => state.productsInCart.products
     );
     function handleRemoveFromCart(product: FullProductInformation) {
-        // TODO: Implement this
-        console.log('Removing this item from cart: ', product);
+        dispatch(removeProductFromCart(product));
         setUpdateCartList(!updateCartList);
     }
 
@@ -82,8 +84,16 @@ const Cart = () => {
                         </Card>
                     </Col>
                 </Row>
-                <Button variant="outlined" color="secondary" component={Link} to="/">Back to catalogue</Button>
+                <Button
+                    variant="outlined"
+                    color="secondary"
+                    component={Link}
+                    to="/"
+                >
+                    Back to catalogue
+                </Button>
             </Container>
+            <CheckoutForm />
         </React.Fragment>
     );
 };

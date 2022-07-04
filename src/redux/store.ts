@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import productsInCartReducer from './cart-products-slice';
-import { FullProductInformation } from '../pages/ProductDetailsPage';
 
 export const store = configureStore({
     reducer: {

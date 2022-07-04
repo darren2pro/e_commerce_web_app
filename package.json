@@ -1,7 +1,7 @@
 {
-  "name": "darren-react-app",
+  "name": "react-app",
   "version": "0.1.0",
-  "description": "React web application built by Darren",
+  "description": "React web application",
   "main": "src/index.tsx",
   "author": "Darren",
   "private": true,

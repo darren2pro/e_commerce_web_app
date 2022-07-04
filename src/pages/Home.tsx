@@ -1,5 +1,5 @@
 import AllProducts from '../components/AllProducts';
-import React, { useState } from 'react';
+import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
