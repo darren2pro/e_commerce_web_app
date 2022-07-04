@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
     const welcomeMessage =
-        "Welcome to River Valley Irregulars Static E-Commerce Website!";
+        'Welcome to River Valley Irregulars Static E-Commerce Website!';
 
     return (
         <>
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
                     typewriter
                         .changeDelay(30)
                         .pauseFor(1500)
-                        .typeString("Click an item to view more")
+                        .typeString('Click an item to view more')
                         .start();
                 }}
             />

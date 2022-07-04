@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardBody, CardHeader, Table} from "reactstrap";
+import { Card, CardBody, CardHeader, Table } from 'reactstrap';
 
 export type ProductDetailsPageProps = {
     item: string;
@@ -19,13 +19,13 @@ const ProductDetailsPage = (props: ProductDetailsPageProps) => {
     );
     return (
         <div>
-            <Card className='card'>
-                <CardHeader className='align-items-center d-flex'>
-                    <h3 className='card-title mb-0 flex-grow-1'>{props.item} Details Page</h3>
+            <Card className="card">
+                <CardHeader className="align-items-center d-flex">
+                    <h3 className="card-title mb-0 flex-grow-1">
+                        {props.item} Details Page
+                    </h3>
                 </CardHeader>
-                <CardBody className='p-0'>
-                    {info}
-                </CardBody>
+                <CardBody className="p-0">{info}</CardBody>
             </Card>
         </div>
     );
