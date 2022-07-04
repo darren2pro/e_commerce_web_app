@@ -5,67 +5,25 @@ import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
-    const [isShowButton, setIsShowButton] = useState(false);
-
-    const hideButton = () => {
-        setIsShowButton(false);
-    };
-
-    const showButton = () => {
-        setIsShowButton(true);
-    };
-
     const welcomeMessage =
-        "Welcome to CVWO's sample react app! Here's a basic list for you to experiment with.";
+        "Welcome to River Valley Irregulars Static E-Commerce Website!";
 
     return (
         <>
             <h3>{welcomeMessage}</h3>
             <br />
-            <BasicList />
-            <br />
-            <Button
-                variant="contained"
-                color="primary"
-                component={Link}
-                to="/todoApp"
-            >
-                {'Visit the Todo App!'}
-            </Button>
             <Typewriter
                 onInit={(typewriter) => {
-                    hideButton();
                     typewriter
-                        .changeDelay(80)
+                        .changeDelay(30)
                         .pauseFor(1500)
-                        .typeString("It's a little plain isn't it?")
-                        .callFunction(showButton)
+                        .typeString("Click an item to view more")
                         .start();
                 }}
             />
-            <br />
-            {isShowButton && (
-                <Button
-                    variant="contained"
-                    color="primary"
-                    component={Link}
-                    to="/styled"
-                >
-                    {'Yes'}
-                </Button>
-            )}
+            <BasicList />
             <br />
             <br />
-            {isShowButton && (
-                <Button
-                    variant="contained"
-                    color="primary"
-                    component={Link}
-                    to="/searchPage"
-                >
-                    {'Jump to search page!'}
-                </Button>
-            )}
         </>
     );
 };
