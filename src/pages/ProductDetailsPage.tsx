@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
+import {Link} from "react-router-dom";
+import {Button} from "@material-ui/core";
 
 export type FullProductInformation = {
     item: string;
@@ -17,6 +19,16 @@ const ProductDetailsPage = (props: FullProductInformation) => {
             <h4>Description: {props.description}</h4>
         </div>
     );
+    const backToHome = (
+        <Button
+            variant="outlined"
+            color="secondary"
+            component={Link}
+            to="/"
+        >
+            Back to catalogue
+        </Button>
+    );
     return (
         <div>
             <Card className="card">
@@ -27,6 +39,7 @@ const ProductDetailsPage = (props: FullProductInformation) => {
                 </CardHeader>
                 <CardBody className="p-0">{info}</CardBody>
             </Card>
+            {backToHome}
         </div>
     );
 };
