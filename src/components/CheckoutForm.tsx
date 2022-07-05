@@ -27,12 +27,21 @@ const CheckoutForm = () => {
             return;
         }
         dispatch(removeAllProductsFromCart());
-        setName('');
-        setPaymentMethodIsSelected(false);
-        // TODO: Remove the radio selection
-        console.log(
+        const paymentMethodHtmlEle = document.querySelector('#checkout-form > div:nth-child(3) > fieldset');
+        const paymentMethodRadioEle = paymentMethodHtmlEle?.getElementsByTagName('input') || [];
+        // Un-check all radio inputs
+        for (let i = 0; i < paymentMethodRadioEle.length; i++) {
+            const radioChild = paymentMethodRadioEle[i];
+            radioChild.checked = false;
+        }
+        // Un-check the checkbox
+        const expressDeliveryCheckbox = document.querySelector('#express-delivery') as HTMLInputElement;
+        if (expressDeliveryCheckbox) expressDeliveryCheckbox.checked = false;
+        alert(
             `Cart checked out. $${totalPrice} will be billed to ${name}.`
         );
+        setName('');
+        setPaymentMethodIsSelected(false);
     }
 
     function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {

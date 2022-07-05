@@ -15,9 +15,9 @@ const Home: React.FC = () => {
             <Typewriter
                 onInit={(typewriter) => {
                     typewriter
-                        .changeDelay(30)
+                        .changeDelay(50)
                         .pauseFor(1500)
-                        .typeString('Click an item to view more')
+                        .typeString('Redux is used for state management. Try adding a few products then view the cart.')
                         .start();
                 }}
             />
